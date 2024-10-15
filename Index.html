@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Producción Textil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Producción Textil</h1>
+
+        <h2>1. Gestión de Materia Prima</h2>
+        <form id="materialForm">
+            <label for="materialName">Nombre de la Materia Prima:</label>
+            <input type="text" id="materialName" name="materialName" placeholder="Nombre de la materia prima">
+
+            <label for="materialQuantity">Cantidad:</label>
+            <input type="number" id="materialQuantity" name="materialQuantity" placeholder="Cantidad">
+
+            <label for="materialUnit">Unidad:</label>
+            <input type="text" id="materialUnit" name="materialUnit" placeholder="Unidad (kg, m, etc.)">
+
+            <button type="button" onclick="saveMaterial()">Guardar Materia Prima</button>
+        </form>
+
+        <h2>2. Gestión de Producción</h2>
+        <form id="productionForm">
+            <label for="productionTask">Tarea de Producción:</label>
+            <input type="text" id="productionTask" name="productionTask" placeholder="Tarea (teñido, tejido, etc.)">
+
+            <label for="productionStatus">Estado:</label>
+            <input type="text" id="productionStatus" name="productionStatus" placeholder="Estado de la producción">
+
+            <button type="button" onclick="saveProduction()">Guardar Producción</button>
+        </form>
+
+        <h2>3. Gestión de Productos Terminados</h2>
+        <form id="finishedGoodsForm">
+            <label for="finishedProductName">Nombre del Producto Terminado:</label>
+            <input type="text" id="finishedProductName" name="finishedProductName" placeholder="Nombre del producto">
+
+            <label for="finishedProductQuantity">Cantidad:</label>
+            <input type="number" id="finishedProductQuantity" name="finishedProductQuantity" placeholder="Cantidad">
+
+            <button type="button" onclick="saveFinishedGoods()">Guardar Producto Terminado</button>
+        </form>
+
+        <h2>4. Gestión de Pedidos y Distribución</h2>
+        <form id="ordersForm">
+            <label for="orderCustomer">Cliente:</label>
+            <input type="text" id="orderCustomer" name="orderCustomer" placeholder="Nombre del cliente">
+
+            <label for="orderProduct">Producto:</label>
+            <input type="text" id="orderProduct" name="orderProduct" placeholder="Producto solicitado">
+
+            <label for="orderStatus">Estado del Pedido:</label>
+            <input type="text" id="orderStatus" name="orderStatus" placeholder="Estado (en proceso, enviado, etc.)">
+
+            <button type="button" onclick="saveOrder()">Guardar Pedido</button>
+        </form>
+
+        <button onclick="window.open('viewData.html', '_blank')">Ver Información Guardada</button>
+
+        <div id="statusMessage"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Facturas</title>
+    <script src="factura.js" defer></script>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #statusMessage {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generador de Facturas</h1>
+    
+    <!-- Botones para generar las facturas -->
+    <button onclick="generarFacturaDiaria()">Generar Factura del Día</button>
+    <button onclick="generarFacturaMensual()">Generar Factura del Mes</button>
+    <button onclick="generarFacturaSemanal()">Generar Factura de la Semana</button>
+
+    <!-- Área para mostrar mensajes de estado o resultados -->
+    <div id="statusMessage"></div>
+</body>
+</html>
+
+
+
